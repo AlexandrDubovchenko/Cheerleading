@@ -1,10 +1,20 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap"
+import {
+  Navbar, Nav, Form, FormControl, Button,
+} from 'react-bootstrap';
 
 const CustomNavbar = ({ pageInfo }) => {
-  console.log(pageInfo)
+  const data = useStaticQuery(graphql`
+  query Header {
+    imageSharp (fluid: {originalName: {eq: "star-logo-template-vector-icon-illustration-design.png"}}) {
+      fluid {
+        ...GatsbyImageSharpFluid
+      }
+    }
+  }
+`);
   return (
     <>
       <Navbar variant="dark" expand="lg" id="site-navbar">
@@ -22,7 +32,7 @@ const CustomNavbar = ({ pageInfo }) => {
             </Link>
           </Nav>
           <Nav className="ml-auto">
-            <Form inline onSubmit={e => e.preventDefault()}>
+            <Form inline onSubmit={(e) => e.preventDefault()}>
               <Form.Group>
                 <FormControl
                   type="text"
@@ -37,7 +47,7 @@ const CustomNavbar = ({ pageInfo }) => {
         {/* </Container> */}
       </Navbar>
     </>
-  )
-}
+  );
+};
 
-export default CustomNavbar
+export default CustomNavbar;

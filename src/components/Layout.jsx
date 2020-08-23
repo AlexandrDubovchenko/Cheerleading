@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import React from 'react';
+import { StaticQuery, graphql } from 'gatsby';
 
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col } from 'react-bootstrap';
 
-import Header from "./header"
-import Navbar from "./navBar"
+import Header from './Header';
+import Navbar from './NavBar';
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -24,7 +24,7 @@ const Layout = ({ children, pageInfo }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <>
         <Container fluid className="px-0 main">
           <Row noGutters className="justify-content-center">
@@ -46,8 +46,11 @@ const Layout = ({ children, pageInfo }) => (
             <Col className="footer-col">
               <footer>
                 <span>
-                  © {new Date().getFullYear()}, Built with
-                  {` `}
+                  ©
+                  {' '}
+                  {new Date().getFullYear()}
+                  , Built with
+                  {' '}
                   <a href="https://www.gatsbyjs.org">Gatsby</a>
                 </span>
               </footer>
@@ -57,6 +60,6 @@ const Layout = ({ children, pageInfo }) => (
       </>
     )}
   />
-)
+);
 
-export default Layout
+export default Layout;
