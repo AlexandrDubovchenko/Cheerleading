@@ -10,8 +10,13 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
 import Header from './Header';
-import Navbar from './NavBar';
+import Footer from './Footer';
+
+library.add(fab, fas);
 
 const Layout = ({ children, pageInfo }) => (
   <StaticQuery
@@ -32,7 +37,6 @@ const Layout = ({ children, pageInfo }) => (
               <Header siteTitle={data.site.siteMetadata.title} />
             </Col>
           </Row>
-          <Navbar pageInfo={pageInfo} />
           <Row noGutters>
             <Col>
               <Container className="mt-5">
@@ -42,20 +46,7 @@ const Layout = ({ children, pageInfo }) => (
           </Row>
         </Container>
         <Container fluid className="px-0">
-          <Row noGutters>
-            <Col className="footer-col">
-              <footer>
-                <span>
-                  ©
-                  {' '}
-                  {new Date().getFullYear()}
-                  , Built with
-                  {' '}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </span>
-              </footer>
-            </Col>
-          </Row>
+          <Footer />
         </Container>
       </>
     )}

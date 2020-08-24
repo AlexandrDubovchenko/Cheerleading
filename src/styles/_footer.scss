@@ -1,0 +1,32 @@
+.footer {
+  background-image: linear-gradient(to top, #f8f8f8 0%, #fdfcfc 100%);
+  box-shadow: 0 -1px 0 #f2f1f1;
+  padding: 40px 0 20px 0;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    font-family: "Myriad Pro";
+    &__title {
+      margin-bottom: 3rem;
+    }
+    & h3 {
+      font-size: 20px;
+      letter-spacing: 0.6px;
+    }
+    & p, a {
+      display: flex;
+      flex-direction: column;
+      color: #868585;
+      font-size: 16px;
+      letter-spacing: 0.48px;
+      text-decoration: none;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+    &__col {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
