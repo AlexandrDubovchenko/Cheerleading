@@ -18,7 +18,7 @@ import Footer from './Footer';
 
 library.add(fab, fas);
 
-const Layout = ({ children, pageInfo }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
