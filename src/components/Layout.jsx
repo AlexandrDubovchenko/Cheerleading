@@ -39,9 +39,7 @@ const Layout = ({ children }) => (
           </Row>
           <Row noGutters>
             <Col>
-              <Container className="mt-5">
-                <main>{children}</main>
-              </Container>
+              <main>{children}</main>
             </Col>
           </Row>
         </Container>
